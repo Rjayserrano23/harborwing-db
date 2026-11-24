@@ -1,17 +1,3 @@
--- =====================================================================
--- HarborWing Air schema (MySQL 8.0.16+)
--- =====================================================================
--- RESET: running this file drops and recreates the whole database.
--- All timestamps are stored in UTC (columns end in _utc).
--- Externally managed codes (no FK, not enforced locally):
---   airline_code, aircraft_type_code, status codes (reservation/payment),
---   ticket_type_code, travel_class_code
--- Simplifying assumption: flight_number uniquely identifies a schedule.
--- Deletion rules are noted beside each foreign key.
--- ON UPDATE RESTRICT is used everywhere because MySQL does not allow
--- CHECK constraints on columns used in FK referential actions.
--- =====================================================================
-
 DROP DATABASE IF EXISTS harborwing;
 CREATE DATABASE harborwing CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE harborwing;
